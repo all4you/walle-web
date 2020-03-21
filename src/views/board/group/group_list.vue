@@ -95,7 +95,7 @@ export default {
   },
   data() {
     return {
-      query: "",
+      query: null,
       boardList: null,
       totalCount: 0,
       currentPage: 0,
