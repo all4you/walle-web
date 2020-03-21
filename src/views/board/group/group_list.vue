@@ -7,7 +7,7 @@
         </el-input>
       </el-col>
       <el-col :span="2" :offset="18">
-        <router-link to="/board/create">
+        <router-link to="/board/group/create">
           <el-button icon="el-icon-circle-plus" type="primary" style="margin-bottom:8px;">新增</el-button>
         </router-link>
       </el-col>
@@ -45,7 +45,7 @@
       <el-table-column label="操作" width="150" align="center">
         <template slot-scope="scope">
           <!-- 如果要通过params传参数，router-link 的to中，必须要指定name属性，不能使用path属性 -->
-          <router-link :to="{ name: 'modifyBoard', params : {boardCode : scope.row.boardCode} }">
+          <router-link :to="{ name: 'modifyGroupBoard', params : {boardCode : scope.row.boardCode} }">
             <el-button icon="el-icon-edit" type="primary" size="small" circle></el-button>
           </router-link>
           <el-popover placement="top" width="160">
@@ -56,7 +56,7 @@
             </div>
             <el-button icon="el-icon-delete" type="danger" size="small" circle slot="reference"></el-button>
           </el-popover>
-          <router-link :to="{ name: 'sendMsg', params : {boardCode : scope.row.boardCode} }">
+          <router-link :to="{ name: 'sendGroupMsg', params : {boardCode : scope.row.boardCode} }">
             <el-button icon="el-icon-s-promotion" type="info" size="small" circle></el-button>
           </router-link>
         </template>

@@ -118,7 +118,7 @@
           :disabled="submiting"
           :loading="submiting"
         >{{ submiting ? '提交中...' : '提 交' }}</el-button>
-        <router-link to="/board/list">
+        <router-link to="/board/group">
           <el-button>取 消</el-button>
         </router-link>
       </el-form-item>
@@ -273,7 +273,7 @@ export default {
             message: "模板创建成功!"
           });
           setTimeout(() => {
-            this.$router.push("/board/list");
+            this.$router.push("/board/group");
           }, 2000);
         })
         .catch(error => {
@@ -295,7 +295,7 @@ export default {
             message: "模板修改成功!"
           });
           setTimeout(() => {
-            this.$router.push("/board/list");
+            this.$router.push("/board/group");
           }, 2000);
         })
         .catch(error => {

@@ -64,36 +64,37 @@ export const constantRoutes = [
   {
     path: '/board',
     component: Layout,
-    redirect: '/board/list',
+    redirect: '/board/group',
     name: 'board',
     meta: { title: '模板', icon: 'example' },
+    alwaysShow: true,
     children: [
       {
-        path: 'list',
-        name: 'boardList',
-        component: () => import('@/views/board/list'),
-        meta: { title: '模板列表', icon: 'component' }
+        path: 'group',
+        name: 'groupList',
+        component: () => import('@/views/board/group/group_list'),
+        meta: { title: '群消息', icon: 'component' }
       },
       {
-        path: 'create',
-        name: 'createBoard',
-        component: () => import('@/views/board/detail'),
+        path: 'group/create',
+        name: 'createGroupBoard',
+        component: () => import('@/views/board/group/group_detail'),
         hidden: true,
-        meta: { title: '新增模板', icon: 'form' }
+        meta: { title: '新增群消息模板', icon: 'form' }
       },
       {
-        path: 'modify/:boardCode',
-        name: 'modifyBoard',
-        component: () => import('@/views/board/detail'),
+        path: 'group/modify/:boardCode',
+        name: 'modifyGroupBoard',
+        component: () => import('@/views/board/group/group_detail'),
         hidden: true,
-        meta: { title: '编辑模板', icon: 'form' }
+        meta: { title: '编辑群消息模板', icon: 'form' }
       },
       {
-        path: 'sendMsg/:boardCode',
-        name: 'sendMsg',
-        component: () => import('@/views/board/sendMsg'),
+        path: 'group/sendMsg/:boardCode',
+        name: 'sendGroupMsg',
+        component: () => import('@/views/board/group/group_sendMsg'),
         hidden: true,
-        meta: { title: '发送消息', icon: 'form' }
+        meta: { title: '发送群消息', icon: 'form' }
       }
     ]
   },

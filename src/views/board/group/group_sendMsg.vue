@@ -85,7 +85,7 @@
           :disabled="submiting"
           :loading="submiting"
         >{{ submiting ? '发送中...' : '发 送' }}</el-button>
-        <router-link to="/board/list">
+        <router-link to="/board/group">
           <el-button>取 消</el-button>
         </router-link>
       </el-form-item>
@@ -163,7 +163,7 @@ export default {
       sendMessage(this.board.boardCode, this.data)
         .then(content => {
           this.$notify({
-            title: "操作成功",
+            title: "发送成功",
             type: "success",
             message: "消息发送成功!"
           });
@@ -171,10 +171,16 @@ export default {
         })
         .catch(error => {
           this.submiting = false;
+          let array = error.errorMsg.split("##");
+          let msg = array.map(item => {
+            return '<p>' + item + '</p>'
+          }).join("");
+
           this.$notify({
-            title: "操作失败(" + error.errorCode + ")",
+            title: "发送失败(" + error.errorCode + ")",
             type: "error",
-            message: error.errorMsg
+            dangerouslyUseHTMLString: true,
+            message: msg
           });
         });
     }
