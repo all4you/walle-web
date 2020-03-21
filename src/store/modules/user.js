@@ -1,5 +1,5 @@
-import { register, login, logout, updatePassword, getUserInfo } from '@/api/userService'
-import { getToken, setToken, removeToken, setUserInfo } from '@/utils/dataStorage'
+import { getUserInfo } from '@/api/userService'
+import { getToken, setToken, removeToken, setUserInfo, removeUserInfo } from '@/utils/dataStorage'
 import { resetRouter } from '@/router'
 
 const state = {
@@ -64,6 +64,7 @@ const actions = {
 
   resetStateAction({ commit }) {
     removeToken() // must remove  token  first
+    removeUserInfo()
     resetRouter()
     commit('resetState')
   },
@@ -71,6 +72,7 @@ const actions = {
   // remove token
   resetTokenAction({ commit }) {
     removeToken() // must remove  token  first
+    removeUserInfo()
     commit('resetState')
   },
 
