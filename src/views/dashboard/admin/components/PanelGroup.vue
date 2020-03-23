@@ -15,12 +15,12 @@
     </el-col>
     <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
       <div class="card-panel">
-        <div class="card-panel-icon-wrapper icon-message">
-          <svg-icon icon-class="message" class-name="card-panel-icon" />
+        <div class="card-panel-icon-wrapper icon-guide">
+          <svg-icon icon-class="guide" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            工作通知模板
+            群消息次数
           </div>
           <span class="card-panel-num">敬请期待</span>
         </div>
@@ -28,12 +28,12 @@
     </el-col>
     <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
       <div class="card-panel">
-        <div class="card-panel-icon-wrapper icon-guide">
-          <svg-icon icon-class="guide" class-name="card-panel-icon" />
+        <div class="card-panel-icon-wrapper icon-message">
+          <svg-icon icon-class="message" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            群消息次数
+            工作通知模板
           </div>
           <span class="card-panel-num">敬请期待</span>
         </div>
