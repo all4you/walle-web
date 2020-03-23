@@ -25,12 +25,12 @@ router.beforeEach(async (to, from, next) => {
     } else {
       // 先从内存中获取用户信息
       let userInfo = store.getters.userInfo
-      if (!userInfo) {
-        // 内存中获取不到再从本地获取
-        userInfo = getUserInfo();
-        // 然后再将数据回写到内存中
-        store.dispatch('user/setUserInfoAction', userInfo);
-      }
+      // if (!userInfo) {
+      //   // 内存中获取不到再从本地获取
+      //   userInfo = getUserInfo();
+      //   // 然后再将数据回写到内存中
+      //   store.dispatch('user/setUserInfoAction', userInfo);
+      // }
       if (userInfo) {
         next()
       } else {

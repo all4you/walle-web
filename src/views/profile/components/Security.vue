@@ -60,20 +60,19 @@ export default {
           inputType : 'password',
           inputValidator: this.validatePassword,
         }).then(({ value }) => {
-          getSecurityKey(value).then(response => {
-            if (response.success) {
-              this.securityKey = response.content;
+          getSecurityKey(value)
+          .then(content => {
+              this.securityKey = content;
               this.show = true;
-            } else {
-              this.$notify({
-                title: "操作失败(" + response.errorCode + ")",
+          }).catch(error => {
+            this.$notify({
+                title: "操作失败(" + error.errorCode + ")",
                 type: "error",
-                message: response.errorMsg
+                message: error.errorMsg
               });
-            }
           });
-        }).catch(() => {
-
+        }).catch((error) => {
+          
         });
       }
     }
