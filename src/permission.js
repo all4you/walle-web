@@ -25,6 +25,8 @@ router.beforeEach(async (to, from, next) => {
     } else {
       // 先从内存中获取用户信息
       let userInfo = store.getters.userInfo
+      // FIXME 如果内存中获取不到再到本地获取会有一个问题：
+      // 登录态已经失效了，但是从本地获取到用户信息之后，会跳转到 dashboard 页面
       // if (!userInfo) {
       //   // 内存中获取不到再从本地获取
       //   userInfo = getUserInfo();

@@ -34,19 +34,15 @@ const actions = {
     return new Promise((resolve, reject) => {
       getUserInfo()
         .then(content => {
-          if (response.success) {
             const user = content
             setUserInfo(user)
             commit('setUserInfo', user)
             commit('setAccount', user.account)
             commit('setAvatar', 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif')
             resolve(user)
-          } else {
-            reject('登录状态过期，请重新登录')
-          }
         }).catch(error => {
           console.error("getUserInfoAction catch error===>", error)
-          reject(error)
+          reject(error.errorMsg)
         })
     })
   },
