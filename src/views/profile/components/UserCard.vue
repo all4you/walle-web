@@ -34,16 +34,16 @@
             <el-progress :percentage="100" status="success" />
           </div>
           <div class="progress-item">
-            <span>群消息发送</span>
+            <span>多群匹配</span>
             <el-progress :percentage="100" status="success" />
           </div>
           <div class="progress-item">
-            <span>页面操作</span>
+            <span>JWT凭证</span>
             <el-progress :percentage="100" status="success"/>
           </div>
           <div class="progress-item">
             <span>开放接口</span>
-            <el-progress :percentage="30" />
+            <el-progress :percentage="100" status="success"/>
           </div>
         </div>
       </div>
